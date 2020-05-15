@@ -1,4 +1,5 @@
-import { NetInfo, Platform, View } from 'react-native';
+import { Platform, View } from 'react-native';
+import NetInfo from '@react-native-community/netinfo';
 
 import reactMixin from 'react-mixin';
 import Trackr from 'trackr';
@@ -53,9 +54,9 @@ module.exports = {
     return {
       connected: Data.ddp ? Data.ddp.status == 'connected' : false,
       status: Data.ddp ? Data.ddp.status : 'disconnected',
-      //retryCount: 0
-      //retryTime:
-      //reason:
+      // retryCount: 0
+      // retryTime:
+      // reason:
     };
   },
   call: call,
@@ -174,8 +175,9 @@ module.exports = {
     });
     Data.ddp.on('result', message => {
       const call = Data.calls.find(call => call.id == message.id);
-      if (typeof call.callback == 'function')
+      if (typeof call.callback === 'function') {
         call.callback(message.error, message.result);
+      }
       Data.calls.splice(Data.calls.findIndex(call => call.id == message.id), 1);
     });
 
@@ -193,13 +195,13 @@ module.exports = {
     var callbacks = {};
     if (params.length) {
       var lastParam = params[params.length - 1];
-      if (typeof lastParam == 'function') {
+      if (typeof lastParam === 'function') {
         callbacks.onReady = params.pop();
       } else if (
         lastParam &&
-        (typeof lastParam.onReady == 'function' ||
-          typeof lastParam.onError == 'function' ||
-          typeof lastParam.onStop == 'function')
+        (typeof lastParam.onReady === 'function' ||
+          typeof lastParam.onError === 'function' ||
+          typeof lastParam.onStop === 'function')
       ) {
         callbacks = params.pop();
       }
@@ -227,8 +229,13 @@ module.exports = {
     let existing = false;
     for (var i in Data.subscriptions) {
       const sub = Data.subscriptions[i];
-      if (sub.inactive && sub.name === name && EJSON.equals(sub.params, params))
+      if (
+        sub.inactive &&
+        sub.name === name &&
+        EJSON.equals(sub.params, params)
+      ) {
         existing = sub;
+      }
     }
 
     let id;

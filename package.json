@@ -1,6 +1,6 @@
 {
   "name": "react-native-meteor",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Full Meteor Client for React Native",
   "main": "src/Meteor.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inProgress-team/react-native-meteor.git"
+    "url": "git+https://github.com/bradnorman5490/react-native-meteor.git"
   },
   "keywords": [
     "react-component",
@@ -26,17 +26,18 @@
     "ios",
     "android"
   ],
-  "author": "Théo Mathieu",
+  "author": "Brad Norman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inProgress-team/react-native-meteor/issues"
+    "url": "https://github.com/bradnorman5490/react-native-meteor/issues"
   },
-  "homepage": "https://github.com/inProgress-team/react-native-meteor#readme",
+  "homepage": "https://github.com/bradnorman5490/react-native-meteor#readme",
   "dependencies": {
     "base-64": "^0.1.0",
     "crypto-js": "^3.1.6",
     "ejson": "^2.1.2",
-    "minimongo-cache": "0.0.48",
+    "lodash": "^4.17.15",
+    "minimongo-cache": "git+https://github.com/bradnorman5490/minimongo-cache.git",
     "prop-types": "^15.5.10",
     "react-komposer": "^1.8.0",
     "react-mixin": "^3.0.3",
@@ -50,7 +51,7 @@
     "chai": "^3.5.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.2",
-    "mocha": "^2.4.5",
+    "mocha": "^7.1.2",
     "mock-socket": "^2.0.0",
     "prettier": "1.12.1",
     "sinon": "^1.17.3"
