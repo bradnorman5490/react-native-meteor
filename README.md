@@ -1,7 +1,5 @@
 # react-native-meteor
 
-[![react-native-meteor](http://img.shields.io/npm/dm/react-native-meteor.svg)](https://www.npmjs.org/package/react-native-meteor) [![npm version](https://badge.fury.io/js/react-native-meteor.svg)](http://badge.fury.io/js/react-native-meteor) [![Dependency Status](https://david-dm.org/inProgress-team/react-native-meteor.svg)](https://david-dm.org/inProgress-team/react-native-meteor)
-
 ---
 
 The purpose of this fork is to keep the dependencies up to date and to keep it inline with Meteor.
